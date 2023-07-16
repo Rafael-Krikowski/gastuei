@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gastuei</title>
+
+    <link rel="stylesheet" href="estilo.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <header> 
+        <h1 class="logo">Gastuei</h1>
+
+        <form class="registro-pesquisa-container">
+            <input id="descricao" class="descricao margem-input bordas-input" type="text" placeholder="Descrição">
+            <input id="grupo" class="grupo margem-input bordas-input" type="text" placeholder="Grupo">
+            <input id="valor" class="valor margem-input bordas-input" type="number" step="0.01" placeholder="Valor">
+            <input id="data" class="data-input margem-input bordas-input" type="date">
+
+            <select class="margem-input bordas-input select" name="tipo" id="tipo">
+                <option value="">Tipo</option>
+                <option value="fixa">Fixa</option>
+                <option value="variavel">Variavel</option>
+            </select>
+
+            <fieldset class="campo-botoes bordas-input">
+                <input class="botao bordas-input" type="button" value="Registrar" onclick="registrarDespesa()">
+                <input class="botao bordas-input" type="button" value="Pesquisar">
+            </fieldset>
+        </form>
+    </header>
+
+    <article id="tabela-mb" class="tabela-container-mobile">
+        <table class="tabela-mobile">
+            <tr>
+                <th class="th-mobile">Data:</th>
+                <td class="td-mobile">23/06/2023</td>
+            </tr>
+
+            <tr>
+                <th class="th-mobile">Grupo:</th>
+                <td class="td-mobile">Educação</td>
+            </tr>
+
+            <tr>
+                <th class="th-mobile">Descrição:</th>
+                <td class="td-mobile">parcela Faculdade</td>
+            </tr>
+
+            <tr>
+                <th class="th-mobile">Valor:</th>
+                <td class="td-mobile">R$500,00</td>
+            </tr>
+
+            <tr>
+                <th class="th-mobile"></th>
+                <td class="td-mobile"><button class="botao-apagar">Excluir</button></td>
+            </tr>
+        </table>
+    </article>
+
+    <article id="tabela-lg" class="tabela-container-maior">
+        <table class="tabela-maior">
+            <thead>
+                <tr>
+                    <th class="celula cabecalho data">Data</th>
+                    <th class="celula cabecalho">Grupo</th>
+                    <th class="celula cabecalho">Descrição</th>
+                    <th class="celula cabecalho" colspan="2">Valor</th>
+                </tr>
+            </thead>
+
+            <tbody id="container-pai">
+                <tr id="linha" class="ocultar">
+                    <td id="data" class="celula">23/04/2023</td>
+                    <td id="grupo" class="celula">educação</td>
+                    <td id="descricao" class="celula">livros</td>
+                    <td id="valor" class="celula">R$100</td>
+                    <td class="celula botao-tabela-maior">
+                        <button class="botao-excluir">X</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </article>
+</body>
+</html>
